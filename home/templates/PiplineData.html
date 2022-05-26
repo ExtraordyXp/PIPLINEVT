@@ -1,0 +1,17 @@
+{% block piplinepage %}
+
+<h4 class="card-title">PIPLINE VIBRATION</h4>
+<p class="card-text">GSM POST</p>
+
+<div class="container">
+    <form action="{% url 'passtocountingview' %}" method="GET">
+        
+        <fieldset class="form-group row">
+            <legend class="col-form-legend col-sm-1-12">{{saveVcount.vibrationCount}}</legend>
+            <div class="col-sm-1-12">
+                
+            </div>
+        </fieldset>
+        
+    </form>
+{% endblock piplinepage%}
