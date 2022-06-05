@@ -3,32 +3,62 @@
 <h4 class="card-title">PIPLINE VIBRATION DICTATION </h4>
 <p class="card-text">Device is connected</p>
 
-<div class="container">
-    <form action="{% url 'passtocountingview' %}" method="GET">
-        
-        <fieldset class="form-group row">
-          <legend class="col-form-legend col-sm-1-12"><b>Pipline vibration count </b>  {{saveVcount.vibrationCount}}<b> dictated </b><i>{{saveVcount.date_created}}</i></legend>
-            <div class="col-sm-1-12">
-        </fieldset>
-        
-    </form>
 
-    <form action="{% url 'htmlgpsdataform' %}" method="GET">
-        
-        <fieldset class="form-group row">
-          <legend class="col-form-legend col-sm-1-12"><b>latitude </b>  {{saveVcount.latitude}}<b> longitude </b>{{saveVcount.longitude}}</legend>
-            <div class="col-sm-1-12">
-                <a href="http://www.google.com/maps/place/{{saveVcount.latitude}},{{saveVcount.longitude}}" class="badge badge-primary">click to view location</a>
-        </fieldset>
+
+   
+
+   <div class="container">
+        <!--this is a row in a colum-->
+
+        <div class="row">
+          <form action="{% url 'passtocountingview' %}" method="GET">
+          
+            <fieldset class="form-group row">
+              <legend>vibration count <b> {{saveVcount.vibrationCount}}</b> dictated </legend>
+       
+            </fieldset>
             
-            <h1>Google Maps Embedded</h1>
-            <h1>Google Maps is loading</h1>
-            <pre>
-              <iframe src="//maps.google.com/maps?q={{saveVcount.latitude}},{{saveVcount.longitude}}&z=15&output=embed"></iframe >
-            </pre>
-            
-    
         </form>
+        </div>
+    <div class="row">
+      <div class="col">
+        <form action="{% url 'htmlgpsdataform' %}" method="GET">
+        
+          <fieldset class="form-group row">
+            <legend class="col-form-legend col-md"><b>longitude </b>{{saveVcount.longitude}}</legend>
+            <legend class="col-form-legend col-sm"><b>latitude </b>  {{saveVcount.latitude}}</legend>
+          </fieldset>
+        </form>
+      </div>
+        <div class="col">
+          <a style="height:50%; font-size: 100%;" href="http://www.google.com/maps/place/{{saveVcount.latitude}},{{saveVcount.longitude}}" class="ba badge badge-primary">click to view location</a>
+         
+        </div> 
 
-   </label>
+ <!--this is a colum in a row that is in a container-->
+ <div class="col">
+ 
+  <i>{{saveVcount.date_created}}</i>  
+ 
+</div>
+
+        </div>
+        
+
+     
+
+
+      <!--this is a row in a container-->
+      
+    </div>
+
+    <div class="row">
+      <h1>Google Map</h1>
+      <pre>
+        <iframe src="//maps.google.com/maps?q={{saveVcount.latitude}},{{saveVcount.longitude}}&z=18&output=embed"></iframe >
+      </pre>
+    </div>
+
+ 
+
 {% endblock piplinepage%}  

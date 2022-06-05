@@ -3,15 +3,14 @@
 }
 iframe {
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: 60rem;
   height: 25em;
   margin: 2rem auto;
   border: 1px solid black;
 }
 h1, p {
-  text-align: center;
-  color: blue;
+  color: navajowhite;
   width: 90%;
   max-width: 60rem;
   margin: .5rem auto;
@@ -21,9 +20,9 @@ h1, p {
 pre {
   text-align: center;
   width: 90%;
-  max-width: 60rem;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 4 auto;
   background: #eee;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid #000;
 }

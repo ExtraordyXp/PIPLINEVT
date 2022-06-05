@@ -24,7 +24,7 @@ SECRET_KEY = '+m7w5ei=x!c#yuysialug5w+&ty^2h)@(3mygtsq-16o3y&+)z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+#SULEIMA.pythonanywhere.com
 ALLOWED_HOSTS = []
 
 
