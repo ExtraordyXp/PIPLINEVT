@@ -5,6 +5,8 @@ from django.utils import timezone
 class Piplinedata(models.Model):
     vibrationCount = models.FloatField(default=0)
     date_created = models.DateField(default=timezone.now)
+    latitude = models.FloatField(default=0)
+    longitude = models.FloatField(default=0)
 
     def publish(self):
         self.vibrationCount = timezone.now()

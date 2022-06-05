@@ -1,17 +1,33 @@
 {% block piplinepage %}
-
-<h4 class="card-title">PIPLINE VIBRATION</h4>
-<p class="card-text">GSM POST</p>
+<link rel="stylesheet" href="/PiplineVT/home/templates/css/mapembed.css">
+<h4 class="card-title">PIPLINE VIBRATION DICTATION </h4>
+<p class="card-text">Device is connected</p>
 
 <div class="container">
     <form action="{% url 'passtocountingview' %}" method="GET">
         
         <fieldset class="form-group row">
-            <legend class="col-form-legend col-sm-1-12">{{saveVcount.vibrationCount}}</legend>
+          <legend class="col-form-legend col-sm-1-12"><b>Pipline vibration count </b>  {{saveVcount.vibrationCount}}<b> dictated </b><i>{{saveVcount.date_created}}</i></legend>
             <div class="col-sm-1-12">
-                
-            </div>
         </fieldset>
         
     </form>
-{% endblock piplinepage%}
+
+    <form action="{% url 'htmlgpsdataform' %}" method="GET">
+        
+        <fieldset class="form-group row">
+          <legend class="col-form-legend col-sm-1-12"><b>latitude </b>  {{saveVcount.latitude}}<b> longitude </b>{{saveVcount.longitude}}</legend>
+            <div class="col-sm-1-12">
+                <a href="http://www.google.com/maps/place/{{saveVcount.latitude}},{{saveVcount.longitude}}" class="badge badge-primary">click to view location</a>
+        </fieldset>
+            
+            <h1>Google Maps Embedded</h1>
+            <pre>
+              <iframe src="//maps.google.com/maps?q={{saveVcount.latitude}},{{saveVcount.longitude}}&z=15&output=embed"></iframe >
+            </pre>
+            
+    
+        </form>
+
+   </label>
+{% endblock piplinepage%}  
